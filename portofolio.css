@@ -1,0 +1,123 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* ==========================================================================
+   1. Ketentuan: Flexbox untuk Menu Navigasi
+   ========================================================================== */
+.header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column; /* Default menumpuk di layar kecil */
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* Styling Bagian Tentang Saya */
+.tentang-saya {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tentang-saya h2 {
+    margin-bottom: 1rem;
+}
+
+/* Styling Bagian Proyek */
+.proyek-section {
+    padding: 2rem;
+    background-color: #fff;
+}
+
+.proyek-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Styling Dasar Kartu Proyek */
+.kartu-proyek {
+    background-color: #fdfdfd;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem 1.5rem; /* Memberikan ruang vertikal ekstra karena tanpa deskripsi */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.kartu-proyek h3 {
+    color: #2c3e50;
+}
+
+/* Footer */
+.footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* ==========================================================================
+   2. Ketentuan: CSS Grid & Media Query (Mobile-First Approach)
+   ========================================================================== */
+
+/* --- Tampilan Ponsel (Default) --- */
+/* Aturan: 1 kolom kartu */
+.grid-proyek {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Tampilan Tablet (Breakpoint umum: 600px ke atas) --- */
+/* Aturan: 2 kolom kartu */
+@media (min-width: 600px) {
+    .header {
+        flex-direction: row; /* Header sejajar horizontal di layar lebar */
+        justify-content: space-between;
+    }
+
+    .grid-proyek {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- Tampilan Desktop (Breakpoint umum: 992px ke atas) --- */
+/* Aturan: 3 kolom kartu */
+@media (min-width: 992px) {
+    .grid-proyek {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

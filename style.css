@@ -1,0 +1,14 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;  /* 3 kolom sama lebar */
+    grid-template-rows: 100px 200px;  /* baris 1 = 100px, baris 2 = 200px */
+    gap: 10px;
+}
+
+.cell {
+    background-color: lightcoral;
+    border: 2px solid darkred;
+    padding: 30px;
+    text-align: center;
+    font-size: 20px;
+}
